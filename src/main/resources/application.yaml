@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: laptop-store-system
+  profiles:
+    active: local                     # fallback: running from IntelliJ uses "local"
+  jpa:
+    open-in-view: false
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+server:
+  port: 8080
+  shutdown: graceful
+
+
+

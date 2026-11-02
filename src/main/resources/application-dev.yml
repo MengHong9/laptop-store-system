@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}         # no defaults: missing value = startup fails
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+app-config:
+  security:
+    secret: ${JWT_SECRET}
+    expiration: 36000000                  # 10 hours (milliseconds)
+    refresh-token-expiration: 604800000   # 7 days
+
+logging:
+  level:
+    root: INFO
+    org.example.laptopstoresystem: DEBUG  # still verbose enough to debug the dev server
+
+
+
+  #  use this command for run on dev.
+#  docker compose -p laptop-store-dev --env-file .env.dev up -d --build

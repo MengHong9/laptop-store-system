@@ -1,0 +1,12 @@
+.git
+.github
+.idea
+.mvn
+target
+*.iml
+*.iws
+*.ipr
+HELP.md
+.env.local
+.env.dev
+.env.prod

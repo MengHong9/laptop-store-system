@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    # No defaults on purpose: a missing variable stops the app at startup.
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    hikari:
+      maximum-pool-size: 10           # cap connections so Postgres isn't exhausted
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: update                # change to "validate" after you add Flyway
+    show-sql: false
+
+app-config:
+  security:
+    secret: ${JWT_SECRET}             # no default: startup fails if missing
+    expiration: 1800000               # 30 minutes (milliseconds)
+    refresh-token-expiration: 604800000 # 7 days (milliseconds)
+
+server:
+  error:
+    include-message: never            # don't leak internal details to clients
+    include-stacktrace: never
+    include-binding-errors: never
+
+logging:
+  level:
+    root: WARN
+    org.example.laptopstoresystem: INFO
+
+
+
+  #  use this command for run on prod.
+#  docker compose -p laptop-store-prod --env-file .env.prod up -d --build

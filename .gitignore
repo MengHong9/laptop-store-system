@@ -1,0 +1,59 @@
+### Build output ###
+HELP.md
+target/
+build/
+out/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Logs ###
+*.log
+logs/
+
+### Secrets and local config ###
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+
+### OS files ###
+.DS_Store
+Thumbs.db
+
+### Temporary files ###
+*.tmp
+*.bak
+
+
+.env.local
+.env.dev
+.env.prod
